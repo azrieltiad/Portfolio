@@ -1,0 +1,425 @@
+:root {
+  color-scheme: dark;
+  --bg: #09090b;
+  --panel: #111111;
+  --border: rgba(255,255,255,0.035);
+  --text: #ffffff;
+  --muted: #a1a1aa;
+  --accent: #38bdf8;
+  --accent-hover: #60a5fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display, .section-number {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.16;
+  mix-blend-mode: screen;
+}
+
+.sidebar {
+  min-height: 100dvh;
+  position: relative;
+}
+
+/* Thin divider between sidebar and content (desktop) */
+.sidebar::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: 18px;
+  width: 1.6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Compact, plain sidebar typography */
+.sidebar {
+  font-size: 13px;
+}
+
+.sidebar-header {
+  width: 100%;
+}
+
+.sidebar-name {
+  font-size: 1.05rem;
+  line-height: 1.05;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--text);
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+
+.sidebar-hr {
+  height: 1px;
+  background: var(--border);
+  width: 60%;
+  margin: 0.6rem 0 0.6rem 0;
+  opacity: 0.8;
+}
+
+.sidebar-hr--bottom,
+.sidebar-hr:last-of-type {
+  width: 72%;
+  margin: 1.2rem 0 0.6rem 0;
+  opacity: 0.65;
+}
+
+/* Left-aligned compact nav matching reference */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.sidebar .nav-link {
+  padding: 0.4rem 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  width: 100%;
+}
+
+/* More top space inside the sidebar so header breathes */
+.sidebar .flex.h-full {
+  padding-top: 4rem; /* increases space above header */
+}
+
+.sidebar .nav-link.active::before {
+  content: '➜';
+  display: inline-block;
+  margin-right: 0.6rem;
+  color: var(--accent);
+  transform: translateX(-2px);
+}
+
+.sidebar .nav-link::before {
+  content: '';
+  display: inline-block;
+  width: 1.2rem;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  color: var(--muted);
+  transition: color 160ms ease, transform 160ms ease;
+  font-size: 0.85rem;
+  background: transparent;
+  border: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text);
+  background: transparent;
+  transform: translateX(2px);
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: none;
+  pointer-events: none;
+}
+
+.section-number {
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  color: var(--muted);
+  background: transparent;
+  font-size: 0.78rem;
+  transition: all 160ms ease;
+  border: 1px solid rgba(255,255,255,0.06);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Make sidebar buttons and links plain */
+.sidebar .rounded-full,
+.sidebar a.inline-flex,
+.sidebar button {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0.35rem 0.65rem !important;
+}
+
+/* Ensure bottom area stays left-aligned */
+.sidebar > .flex {
+  align-items: flex-start;
+}
+
+.pill:hover {
+  color: var(--accent);
+  border-color: rgba(56,189,248,0.14);
+  transform: translateY(-2px);
+}
+
+.project-card {
+  overflow: hidden;
+  border-radius: 1.4rem;
+  background: transparent;
+  transition: transform 220ms ease, background 220ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.04);
+}
+
+.experience-rail {
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+.experience-item {
+  position: relative;
+}
+
+.experience-item::before {
+  content: '';
+  position: absolute;
+  left: -1.85rem;
+  top: 0.65rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--text);
+}
+
+.typing {
+  min-height: 1.7rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.typing::after {
+  content: '|';
+  margin-left: 0.2rem;
+  animation: blink 0.9s infinite;
+  color: var(--accent);
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 650ms ease, transform 650ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  transition: opacity 0.55s ease, visibility 0.55s ease;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.terminal-card {
+  width: min(92vw, 420px);
+  border-radius: 1.25rem;
+  background: rgba(17,17,17,0.9);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.8rem 1rem;
+  background: transparent;
+}
+
+.terminal-header span {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  display: inline-block;
+  background: rgba(255,255,255,0.04);
+}
+
+.terminal-body {
+  padding: 1rem 1.1rem 1.2rem;
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.cursor-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  background: rgba(56, 189, 248, 0.12);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 70;
+  transition: width 180ms ease, height 180ms ease, background 180ms ease;
+  mix-blend-mode: screen;
+}
+
+.cursor-glow.active {
+  width: 60px;
+  height: 60px;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 80;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 50;
+  border-radius: 999px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: rgba(17,17,17,0.92);
+  color: var(--text);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 220ms ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  z-index: 55;
+  pointer-events: none;
+  transition: transform 600ms ease;
+}
+
+.page-transition.active {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+@media (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translateY(-120%);
+    transition: transform 280ms ease;
+    min-height: 100dvh;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar.open {
+    transform: translateY(0);
+  }
+
+  .lg\:ml-\[320px\] {
+    margin-left: 0;
+  }
+
+  /* Adjusted for narrower sidebar */
+  .lg\:ml-\[220px\] {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
