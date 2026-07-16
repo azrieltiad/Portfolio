@@ -11,6 +11,27 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#09090B",
+              panel: "#111111",
+              border: "#27272A",
+              text: "#FFFFFF",
+              muted: "#A1A1AA",
+              accent: "#38BDF8",
+              accentHover: "#60A5FA",
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(56, 189, 248, 0.15), 0 10px 35px rgba(56, 189, 248, 0.12)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="icon" href="assets/profile.jpg" type="image/jpeg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body
@@ -54,7 +75,91 @@
         </aside>
 
         <div class="lg:ml-[220px] flex-1">
-          <main class="px-4 pb-16 pt-6 sm:px-6 lg:px-10 lg:pt-10"></main>
+          <header
+            class="sticky top-0 z-30 flex items-center justify-end border-b border-border bg-bg/70 px-4 py-4 backdrop-blur-xl lg:hidden"
+          >
+            <button
+              id="mobile-menu-toggle"
+              class="rounded-full border border-border px-3 py-2 text-sm text-white"
+              type="button"
+              aria-label="Toggle menu"
+            >
+              ☰ Menu
+            </button>
+          </header>
+
+          <main
+            class="flex justify-center px-4 pb-16 pt-6 sm:px-6 lg:px-10 lg:pt-10"
+          >
+            <section
+              class="section reveal bg-bg p-6 sm:p-8 lg:p-12 w-full max-w-3xl"
+            >
+              <div class="space-y-6">
+                <div class="space-y-3">
+                  <p class="text-[11px] uppercase tracking-[0.35em] text-muted">
+                    SOCIAL MEDIA
+                  </p>
+                  <h2 class="text-3xl font-semibold text-white sm:text-4xl">
+                    Connect With Me
+                  </h2>
+                </div>
+
+                <div class="space-y-3">
+                  <a
+                    href="https://www.facebook.com/azriel.jt.3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-between rounded-[20px] border border-border bg-bg/80 px-5 py-4 text-left transition hover:border-accent hover:text-accent"
+                  >
+                    <span class="text-lg font-medium text-white">Facebook</span>
+                    <span class="text-xl text-muted">↗</span>
+                  </a>
+
+                  <a
+                    href="https://www.tiktok.com/@azerzofficial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-between rounded-[20px] border border-border bg-bg/80 px-5 py-4 text-left transition hover:border-accent hover:text-accent"
+                  >
+                    <span class="text-lg font-medium text-white">TikTok</span>
+                    <span class="text-xl text-muted">↗</span>
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/null.azy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-between rounded-[20px] border border-border bg-bg/80 px-5 py-4 text-left transition hover:border-accent hover:text-accent"
+                  >
+                    <span class="text-lg font-medium text-white"
+                      >Instagram</span
+                    >
+                    <span class="text-xl text-muted">↗</span>
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/azriel-jed-tiad-6970243b3/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-between rounded-[20px] border border-border bg-bg/80 px-5 py-4 text-left transition hover:border-accent hover:text-accent"
+                  >
+                    <span class="text-lg font-medium text-white">LinkedIn</span>
+                    <span class="text-xl text-muted">↗</span>
+                  </a>
+
+                  <a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-between rounded-[20px] border border-border bg-bg/80 px-5 py-4 text-left transition hover:border-accent hover:text-accent"
+                  >
+                    <span class="text-lg font-medium text-white">GitHub</span>
+                    <span class="text-xl text-muted">↗</span>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </main>
           <footer
             class="border-t border-border px-6 py-8 text-sm text-muted sm:px-8 lg:px-10"
           >

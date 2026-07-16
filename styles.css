@@ -47,9 +47,9 @@ body::before {
   top: 18px;
   right: 0;
   bottom: 18px;
-  width: 1.6px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  opacity: 0.85;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+  opacity: 0.9;
   pointer-events: none;
 }
 
@@ -316,27 +316,6 @@ body::before {
   line-height: 1.7;
 }
 
-.cursor-glow {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  border: 1px solid rgba(56, 189, 248, 0.5);
-  background: rgba(56, 189, 248, 0.12);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 70;
-  transition: width 180ms ease, height 180ms ease, background 180ms ease;
-  mix-blend-mode: screen;
-}
-
-.cursor-glow.active {
-  width: 60px;
-  height: 60px;
-  background: rgba(56, 189, 248, 0.08);
-}
 
 .scroll-progress {
   position: fixed;

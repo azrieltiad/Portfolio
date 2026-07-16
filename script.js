@@ -10,7 +10,6 @@ const typingEl = document.querySelector('.typing');
 const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 const copyEmail = document.getElementById('copy-email');
-const cursorGlow = document.querySelector('.cursor-glow');
 const pageTransition = document.querySelector('.page-transition');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -174,19 +173,6 @@ function initForm() {
   });
 }
 
-function initCursor() {
-  if (!cursorGlow || prefersReducedMotion || window.matchMedia('(pointer: coarse)').matches) return;
-  window.addEventListener('mousemove', (event) => {
-    cursorGlow.style.left = `${event.clientX}px`;
-    cursorGlow.style.top = `${event.clientY}px`;
-  });
-
-  document.querySelectorAll('a, button, input, textarea, .project-card').forEach((element) => {
-    element.addEventListener('mouseenter', () => cursorGlow.classList.add('active'));
-    element.addEventListener('mouseleave', () => cursorGlow.classList.remove('active'));
-  });
-}
-
 function initKeyboardNav() {
   document.addEventListener('keydown', (event) => {
     if (event.key.toLowerCase() === 'm') {
@@ -220,7 +206,6 @@ window.addEventListener('load', () => {
   initVisitorCounter();
   initCopyEmail();
   initForm();
-  initCursor();
   initKeyboardNav();
   initBackToTop();
   initMobileMenu();

@@ -11,6 +11,27 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#09090B",
+              panel: "#111111",
+              border: "#27272A",
+              text: "#FFFFFF",
+              muted: "#A1A1AA",
+              accent: "#38BDF8",
+              accentHover: "#60A5FA",
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(56, 189, 248, 0.15), 0 10px 35px rgba(56, 189, 248, 0.12)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="icon" href="assets/profile.jpg" type="image/jpeg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body
@@ -56,7 +77,126 @@
         </aside>
 
         <div class="lg:ml-[220px] flex-1">
-          <main class="px-4 pb-16 pt-6 sm:px-6 lg:px-10 lg:pt-10"></main>
+          <header
+            class="sticky top-0 z-30 flex items-center justify-end border-b border-border bg-bg/70 px-4 py-4 backdrop-blur-xl lg:hidden"
+          >
+            <button
+              id="mobile-menu-toggle"
+              class="rounded-full border border-border px-3 py-2 text-sm text-white"
+              type="button"
+              aria-label="Toggle menu"
+            >
+              ☰ Menu
+            </button>
+          </header>
+
+          <main
+            class="flex justify-center px-4 pb-16 pt-6 sm:px-6 lg:px-10 lg:pt-10"
+          >
+            <section
+              class="section reveal bg-bg p-6 sm:p-8 lg:p-12 w-full max-w-3xl"
+            >
+              <div class="space-y-6">
+                <div class="space-y-3">
+                  <p class="text-[11px] uppercase tracking-[0.35em] text-muted">
+                    CERTIFICATES
+                  </p>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="relative">
+                    <button
+                      id="prev-cert"
+                      type="button"
+                      class="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border bg-bg/80 p-3 text-lg text-white transition hover:border-accent hover:text-accent"
+                      aria-label="Previous certificate"
+                    >
+                      ←
+                    </button>
+
+                    <div class="px-10">
+                      <div
+                        class="certificate-slider-area relative min-h-[420px] cursor-grab select-none sm:min-h-[520px]"
+                      >
+                        <article
+                          class="certificate-slide absolute inset-0 left-0 right-0 top-0 overflow-hidden rounded-[20px] border border-border bg-bg/80 p-3 opacity-100 transition-all duration-300"
+                        >
+                          <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center rounded-[14px] bg-bg/70 text-center">
+                            <span class="rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-accent">
+                              Available soon
+                            </span>
+                          </div>
+                          <img
+                            src="assets/certtificates/1.jpg"
+                            alt="Certificate 1"
+                            class="h-full w-full rounded-[14px] object-cover"
+                          />
+                        </article>
+
+                        <article
+                          class="certificate-slide absolute inset-0 left-[8%] right-[8%] top-0 overflow-hidden rounded-[20px] border border-border bg-bg/80 p-3 opacity-40 transition-all duration-300"
+                        >
+                          <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center rounded-[14px] bg-bg/70 text-center">
+                            <span class="rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-accent">
+                              Available soon
+                            </span>
+                          </div>
+                          <img
+                            src="assets/certtificates/2.jpg"
+                            alt="Certificate 2"
+                            class="h-full w-full rounded-[14px] object-cover"
+                          />
+                        </article>
+
+                        <article
+                          class="certificate-slide absolute inset-0 left-[16%] right-[16%] top-0 overflow-hidden rounded-[20px] border border-border bg-bg/80 p-3 opacity-40 transition-all duration-300"
+                        >
+                          <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center rounded-[14px] bg-bg/70 text-center">
+                            <span class="rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-accent">
+                              Available soon
+                            </span>
+                          </div>
+                          <img
+                            src="assets/certtificates/3.jpg"
+                            alt="Certificate 4"
+                            class="h-full w-full rounded-[14px] object-cover"
+                          />
+                        </article>
+                      </div>
+                    </div>
+
+                    <button
+                      id="next-cert"
+                      type="button"
+                      class="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border bg-bg/80 p-3 text-lg text-white transition hover:border-accent hover:text-accent"
+                      aria-label="Next certificate"
+                    >
+                      →
+                    </button>
+                  </div>
+
+                  <div class="flex justify-center gap-2">
+                    <button
+                      class="certificate-dot h-2.5 w-2.5 rounded-full border border-border bg-white/80"
+                      type="button"
+                      aria-label="Show certificate 1"
+                    ></button>
+                    <button
+                      class="certificate-dot h-2.5 w-2.5 rounded-full border border-border bg-white/20"
+                      type="button"
+                      aria-label="Show certificate 2"
+                    ></button>
+
+                    <button
+                      class="certificate-dot h-2.5 w-2.5 rounded-full border border-border bg-white/20"
+                      type="button"
+                      aria-label="Show certificate 4"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
           <footer
             class="border-t border-border px-6 py-8 text-sm text-muted sm:px-8 lg:px-10"
           >
@@ -71,5 +211,98 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <script>
+      const slides = Array.from(
+        document.querySelectorAll(".certificate-slide"),
+      );
+      const dots = Array.from(document.querySelectorAll(".certificate-dot"));
+      const prevButton = document.getElementById("prev-cert");
+      const nextButton = document.getElementById("next-cert");
+      let currentIndex = 0;
+      let startX = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === index;
+          const isPrev =
+            slideIndex === (index - 1 + slides.length) % slides.length;
+          const isNext = slideIndex === (index + 1) % slides.length;
+
+          slide.classList.toggle("opacity-100", isActive);
+          slide.classList.toggle("opacity-40", isPrev || isNext);
+          slide.classList.toggle("opacity-0", !isActive && !isPrev && !isNext);
+          slide.classList.toggle("pointer-events-none", !isActive);
+          slide.classList.toggle("z-10", isActive);
+          slide.classList.toggle("z-0", !isActive);
+          slide.classList.toggle("scale-[1.01]", isActive);
+          slide.classList.toggle("scale-[0.96]", isPrev || isNext);
+          slide.classList.toggle("left-0", isActive);
+          slide.classList.toggle("left-[8%]", isPrev);
+          slide.classList.toggle("left-[16%]", isNext);
+          slide.classList.toggle("right-0", isActive);
+          slide.classList.toggle("right-[8%]", isPrev);
+          slide.classList.toggle("right-[16%]", isNext);
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("bg-white/80", dotIndex === index);
+          dot.classList.toggle("bg-white/20", dotIndex !== index);
+        });
+      }
+
+      function goToSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+        showSlide(currentIndex);
+      }
+
+      prevButton?.addEventListener("click", () => {
+        goToSlide(currentIndex - 1);
+      });
+
+      nextButton?.addEventListener("click", () => {
+        goToSlide(currentIndex + 1);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          goToSlide(index);
+        });
+      });
+
+      const carousel = document.querySelector(".certificate-slider-area");
+      if (carousel) {
+        carousel.addEventListener("touchstart", (event) => {
+          startX = event.touches[0].clientX;
+        });
+
+        carousel.addEventListener("touchend", (event) => {
+          const endX = event.changedTouches[0].clientX;
+          const diff = endX - startX;
+          if (diff > 50) {
+            goToSlide(currentIndex - 1);
+          } else if (diff < -50) {
+            goToSlide(currentIndex + 1);
+          }
+        });
+
+        carousel.addEventListener("mousedown", (event) => {
+          startX = event.clientX;
+        });
+
+        carousel.addEventListener("mouseup", (event) => {
+          const endX = event.clientX;
+          const diff = endX - startX;
+          if (diff > 50) {
+            goToSlide(currentIndex - 1);
+          } else if (diff < -50) {
+            goToSlide(currentIndex + 1);
+          }
+        });
+      }
+
+      if (slides.length) {
+        showSlide(currentIndex);
+      }
+    </script>
   </body>
 </html>

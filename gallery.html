@@ -11,6 +11,27 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#09090B",
+              panel: "#111111",
+              border: "#27272A",
+              text: "#FFFFFF",
+              muted: "#A1A1AA",
+              accent: "#38BDF8",
+              accentHover: "#60A5FA",
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(56, 189, 248, 0.15), 0 10px 35px rgba(56, 189, 248, 0.12)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="icon" href="assets/profile.jpg" type="image/jpeg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body
@@ -54,7 +75,47 @@
         </aside>
 
         <div class="lg:ml-[220px] flex-1">
-          <main class="px-4 pb-16 pt-6 sm:px-6 lg:px-10 lg:pt-10"></main>
+          <header
+            class="sticky top-0 z-30 flex items-center justify-end border-b border-border bg-bg/70 px-4 py-4 backdrop-blur-xl lg:hidden"
+          >
+            <button
+              id="mobile-menu-toggle"
+              class="rounded-full border border-border px-3 py-2 text-sm text-white"
+              type="button"
+              aria-label="Toggle menu"
+            >
+              ☰ Menu
+            </button>
+          </header>
+
+          <main class="flex justify-center px-4 pb-16 pt-6 sm:px-6 lg:px-10 lg:pt-10">
+            <section class="section reveal bg-bg p-6 sm:p-8 lg:p-12 w-full max-w-3xl">
+              <div class="space-y-6">
+                <div class="space-y-3">
+                  <p class="text-[11px] uppercase tracking-[0.35em] text-muted">
+                    GALLERY
+                  </p>
+                  <h2 class="text-3xl font-semibold text-white sm:text-4xl">
+                    Moments &amp; Memories
+                  </h2>
+                </div>
+
+                <div class="space-y-4">
+                  <article class="overflow-hidden rounded-[20px] border border-border bg-bg/80 p-3">
+                    <div class="flex min-h-[220px] items-center justify-center rounded-[14px] border border-dashed border-border bg-bg/70 text-center text-muted">
+                      Available soon
+                    </div>
+                  </article>
+
+                  <article class="overflow-hidden rounded-[20px] border border-border bg-bg/80 p-3">
+                    <div class="flex min-h-[220px] items-center justify-center rounded-[14px] border border-dashed border-border bg-bg/70 text-center text-muted">
+                      Available soon
+                    </iv>
+                  </article>
+                </div>
+              </div>
+            </section>
+          </main>
           <footer
             class="border-t border-border px-6 py-8 text-sm text-muted sm:px-8 lg:px-10"
           >
