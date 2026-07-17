@@ -37,6 +37,8 @@
   <body
     class="bg-bg text-text antialiased selection:bg-accent/30 selection:text-white"
   >
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="page-transition"></div>
     <div class="min-h-screen bg-bg text-text">
       <div class="flex flex-col lg:flex-row">
         <aside
@@ -83,6 +85,7 @@
           </header>
 
           <main
+            id="content"
             class="flex justify-center px-4 pb-16 pt-6 sm:px-6 lg:px-10 lg:pt-10"
           >
             <section
@@ -91,99 +94,401 @@
               <div class="space-y-6">
                 <div class="space-y-3">
                   <p class="text-[11px] uppercase tracking-[0.35em] text-muted">
-                    CERTIFICATES
+                    01 — CERTIFICATES
                   </p>
+                  <div
+                    class="space-y-4 md:space-y-0 md:flex md:items-center md:justify-between md:gap-6"
+                  >
+                    <div class="grid gap-4 sm:grid-cols-2">
+                      <article class="rounded-[20px] border border-border bg-bg/80 p-4">
+                        <a href="assets/certtificates/Picture1.jpg" target="_blank" rel="noopener noreferrer">
+                          <img
+                            src="assets/certtificates/Picture1.jpg"
+                            alt="Certificate 1"
+                            class="w-full rounded-[16px] border border-border object-cover"
+                          />
+                        </a>
+                      </article>
+                      <article class="rounded-[20px] border border-border bg-bg/80 p-4">
+                        <a href="assets/certtificates/Picture2.png" target="_blank" rel="noopener noreferrer">
+                          <img
+                            src="assets/certtificates/Picture2.png"
+                            alt="Certificate 2"
+                            class="w-full rounded-[16px] border border-border object-cover"
+                          />
+                        </a>
+                      </article>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="space-y-4">
-                  <div class="relative">
-                    <button
-                      id="prev-cert"
-                      type="button"
-                      class="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border bg-bg/80 p-3 text-lg text-white transition hover:border-accent hover:text-accent"
-                      aria-label="Previous certificate"
+                <div class="mx-auto my-10 h-px w-30 bg-border/60"></div>
+
+                <div class="space-y-8">
+                  <div class="space-y-3 pt-2">
+                    <p
+                      class="text-[11px] uppercase tracking-[0.35em] text-muted"
                     >
-                      ←
-                    </button>
-
-                    <div class="px-10">
-                      <div
-                        class="certificate-slider-area relative min-h-[420px] cursor-grab select-none sm:min-h-[520px]"
-                      >
-                        <article
-                          class="certificate-slide absolute inset-0 left-0 right-0 top-0 overflow-hidden rounded-[20px] border border-border bg-bg/80 p-3 opacity-100 transition-all duration-300"
-                        >
-                          <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center rounded-[14px] bg-bg/70 text-center">
-                            <span class="rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-accent">
-                              Available soon
-                            </span>
-                          </div>
-                          <img
-                            src="assets/certtificates/1.jpg"
-                            alt="Certificate 1"
-                            class="h-full w-full rounded-[14px] object-cover"
-                          />
-                        </article>
-
-                        <article
-                          class="certificate-slide absolute inset-0 left-[8%] right-[8%] top-0 overflow-hidden rounded-[20px] border border-border bg-bg/80 p-3 opacity-40 transition-all duration-300"
-                        >
-                          <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center rounded-[14px] bg-bg/70 text-center">
-                            <span class="rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-accent">
-                              Available soon
-                            </span>
-                          </div>
-                          <img
-                            src="assets/certtificates/2.jpg"
-                            alt="Certificate 2"
-                            class="h-full w-full rounded-[14px] object-cover"
-                          />
-                        </article>
-
-                        <article
-                          class="certificate-slide absolute inset-0 left-[16%] right-[16%] top-0 overflow-hidden rounded-[20px] border border-border bg-bg/80 p-3 opacity-40 transition-all duration-300"
-                        >
-                          <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center rounded-[14px] bg-bg/70 text-center">
-                            <span class="rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.25em] text-accent">
-                              Available soon
-                            </span>
-                          </div>
-                          <img
-                            src="assets/certtificates/3.jpg"
-                            alt="Certificate 4"
-                            class="h-full w-full rounded-[14px] object-cover"
-                          />
-                        </article>
-                      </div>
-                    </div>
-
-                    <button
-                      id="next-cert"
-                      type="button"
-                      class="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border bg-bg/80 p-3 text-lg text-white transition hover:border-accent hover:text-accent"
-                      aria-label="Next certificate"
-                    >
-                      →
-                    </button>
+                      02 — Online courses
+                    </p>
                   </div>
 
-                  <div class="flex justify-center gap-2">
-                    <button
-                      class="certificate-dot h-2.5 w-2.5 rounded-full border border-border bg-white/80"
-                      type="button"
-                      aria-label="Show certificate 1"
-                    ></button>
-                    <button
-                      class="certificate-dot h-2.5 w-2.5 rounded-full border border-border bg-white/20"
-                      type="button"
-                      aria-label="Show certificate 2"
-                    ></button>
-
-                    <button
-                      class="certificate-dot h-2.5 w-2.5 rounded-full border border-border bg-white/20"
-                      type="button"
-                      aria-label="Show certificate 4"
-                    ></button>
+                  <div class="grid gap-4">
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            Web Development - Advanced CSS3 and HTML5 Elements
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 1419-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/ec4c304be7"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            Databases - DML Statements and SQL Server
+                            Administration
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 1429-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/ef18e0764a"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            Introduction to Database Concepts
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 1416-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/f4044d31cb"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            An Introduction to Java Programming
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 5059-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/0724b54558"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            Computer Networking - Digital Network Security
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 1447-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/0ccc2ecdb4"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            Computer Networking - Local Area Networks and the
+                            OSI Model
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 1442-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/0ab1bd27a8"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            IT Management - Software and Databases
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 1758-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/2667346469"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            Network Server Security - Protecting the Server and
+                            Client Computers
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 1748-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/da8ace406b"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            Basics of Network Security Analysis
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 4796-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/98f199ba96"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            CompTIA Cloud Basic
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 1945-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/c58c82dd5f"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
+                    <article
+                      class="rounded-[20px] border border-border bg-bg/80 p-6"
+                    >
+                      <div class="flex items-start gap-4">
+                        <img
+                          src="assets/alison_logo.jpg"
+                          alt="Alison logo"
+                          class="h-12 w-12 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg border border-border bg-white p-1 object-contain"
+                        />
+                        <div class="space-y-2">
+                          <h3 class="text-lg font-semibold text-white">
+                            Introduction to HTML and CSS
+                          </h3>
+                          <p class="text-sm text-muted">Alison</p>
+                        </div>
+                      </div>
+                      <div class="mt-5 space-y-2 text-sm text-muted">
+                        <p>Issued Mar 2026</p>
+                        <p>Credential ID 3099-56748019</p>
+                      </div>
+                      <div
+                        class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <a
+                          href="https://alison.com/verify/21db95ab27"
+                          class="inline-flex items-center justify-center rounded-full border border-border px-4 py-2 text-sm text-white transition hover:border-accent hover:text-accent"
+                        >
+                          Show credential
+                          <span class="ml-2 text-[0.85rem]">↗</span>
+                        </a>
+                      </div>
+                    </article>
                   </div>
                 </div>
               </div>
@@ -201,6 +506,15 @@
           </footer>
         </div>
       </div>
+
+      <button
+        id="back-to-top"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+      >
+        ↑
+      </button>
     </div>
     <script src="script.js"></script>
     <script>
